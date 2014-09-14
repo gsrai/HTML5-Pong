@@ -19,6 +19,6 @@ require.config({
 
 // loads in engine
 require(["GameJS/Graphics/canvas"], function(Canvas) {
-	var canvas = new Canvas(640, 480); // this does not belong here!
+    var canvas = new Canvas(640, 480); // this does not belong here!
 	canvas.drawBackground("#000");
 });
