@@ -12,13 +12,23 @@ require.config({
 	baseUrl: 'js/',
 
 	paths: {
-		app: 'app',			// your application code
-		game : 'GameJS/game'  // the game engine code
+		app: 'app',			    // your application code
+		game : 'GameJS/game'   // the game engine code
 	}
 });
 
 // loads in engine
-require(["GameJS/Graphics/canvas"], function(Canvas) {
-	var canvas = new Canvas(640, 480); // this does not belong here!
-	canvas.drawBackground("#000");
+require(["game"], function(Game) {
+
 });
+
+/**
+ * Project todo:
+ * should all game objects (objects drawn to the screen) have
+ * their own draw, update and init methods? sort of like an
+ * interface or abstract class.
+ *
+ * Abstract the state or pause menu,
+ * better input handler object. all keyboard mouse and touch io.
+ * also test this shit! ASAP
+ */
