@@ -19,7 +19,9 @@ require.config({
 
 // loads in engine
 require(["game"], function(Game) {
-
+    var game = new Game(640, 480);
+    game.init();
+    game.run();
 });
 
 /**
