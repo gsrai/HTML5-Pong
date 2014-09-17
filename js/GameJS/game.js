@@ -4,8 +4,9 @@ define([
         'GameJS/Input/input',
         'GameJS/Util/util',
         'GameJS/state',
-        'app/player'
-], function(Canvas, Sprite, Input, Util, State, Player) {
+        'app/player',
+        'app/ai'
+], function(Canvas, Sprite, Input, Util, State, Player, Ai) {
     "use strict";
 
     function Game(width, height) {
@@ -18,6 +19,7 @@ define([
         this.canvas.drawBackground("#000");
 
         Player.init(this.height);
+        Ai.init(this.width, this.height);
     };
 
     Game.prototype.run = function() {
@@ -25,7 +27,10 @@ define([
 
         Util.Animate(function() {
             Player.draw(ctx);
+            Ai.draw(ctx);
+
             Player.update();
+            Ai.update();
         }, this.canvas);
     };
 
